@@ -1,0 +1,7 @@
+streamlit
+pandas
+pillow
+pytesseract
+pdfplumber
+python-docx
+ollama

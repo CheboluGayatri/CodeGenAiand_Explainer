@@ -1,0 +1,15 @@
+{
+  "id": "3bff193407d04f8ca5826dd8972a34dd",
+  "title": "New Chat",
+  "messages": [
+    {
+      "role": "user",
+      "content": "\ud83d\udcdd File: **Screenshot 2025-09-18 121001.png**\n\nawait server.start()\nile \"C:\\Users\\chebo\\AppData\\Roaming\\Python\\Python311\\site-packages\\streamlit\\web\\server\\server.py\", line 296, in start\n\nstart_listening(app)\n-ile \"C:\\Users\\chebo\\AppData\\Roaming\\Python\\Python311\\site-packages\\streamlit\\web\\server\\server.py\u201d, line 144, in start_listening\n\nstart_listening_tcp_socket(http_server)\n\u201cile \"C:\\Users\\chebo\\AppData\\Local \\Programs\\Python\\Python311\\Lib\\site-packages\\tornado\\netutil.py\u201d, line 162, in bind_sockets\n\nsock. bind(sockaddr)\n\u2018mmissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions pip show streamlitrs\\chebo\\oneDrive\\Desktop\\Hous\nrice Prediction> *C\n\nC:\\Users\\chebo\\OneDrive\\Desktop\\House Price Prediction>\nfal error in launcher: Unable to create process using \u2018\"C:\\Program Files\\Python311\\python.exe\" \u201cC:\\Users\\chebo\\AppData\\Roaming\\Python\\Python311\\scripts\\pip.exe\u201d show stream\nt': The system cannot find the file specified.\n\n\u2018C:\\Users\\chebo\\OneDrive\\Desktop\\House Price Prediction> \u201cC\n",
+      "file": {
+        "filename": "Screenshot 2025-09-18 121001.png",
+        "path": "uploads\\b94ac90ccb884615aaecfd1ae9fe3d57_Screenshot 2025-09-18 121001.png"
+      }
+    }
+  ],
+  "created_at": "2025-10-11T22:21:25"
+}
