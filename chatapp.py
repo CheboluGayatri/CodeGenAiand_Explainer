@@ -101,7 +101,7 @@ def extract_text(path):
                         text = pytesseract.image_to_string(im_processed, config='--psm 6')
                     return text.strip() or "(No significant text detected in image.)"
             except pytesseract.TesseractNotFoundError: return "(ERROR: Tesseract executable not found.)"
-            except Exception as e: return f"(OCR failed: {type(e).__name__}: {e}.)"
+            except Exception as e: return f"(OCR failed: {type(e)._name_}: {e}.)"
         if ext == "pdf":
             # PDF support is here
             if not pdfplumber: return "(ERROR: pdfplumber not installed.)"
@@ -119,7 +119,7 @@ def extract_text(path):
             with open(path, "r", encoding="utf-8", errors="ignore") as f: return f.read()
         if ext == "csv": return pd.read_csv(path, nrows=200).to_string()
         return "(Unsupported file type for extraction.)"
-    except Exception as e: return f"(Extraction error: {type(e).__name__}: {e})"
+    except Exception as e: return f"(Extraction error: {type(e)._name_}: {e})"
 
 # ---------- Session State Initialization ----------
 if "chats" not in st.session_state: st.session_state["chats"] = load_chats()
@@ -192,7 +192,7 @@ def handle_send_click():
             file_icon = "📷" if file_info.get("type").startswith("image") else "📎"
             
             # The file summary is now a separate element, not part of 'content'
-            file_summary_content = f"{file_icon} File **{file_info['name']}** uploaded."
+            file_summary_content = f"{file_icon} File *{file_info['name']}* uploaded."
 
             # Create the message object
             msg_obj = {
@@ -224,7 +224,7 @@ def handle_send_click():
 
 def handle_file_upload_only():
     """
-    Processes the uploaded file, extracts text, and *stages* it in session state.
+    Processes the uploaded file, extracts text, and stages it in session state.
     """
     uploaded_file = st.session_state.get("file_upload_widget")
     
@@ -263,9 +263,9 @@ with st.sidebar:
     
     if OLLAMA_AVAILABLE:
         if not ensure_ollama_running():
-            st.error("❌ Ollama server not reachable. Run `ollama serve` in your terminal.")
+            st.error("❌ Ollama server not reachable. Run ollama serve in your terminal.")
     else:
-        st.info("ℹ Ollama library not installed. Install with `pip install ollama`.")
+        st.info("ℹ Ollama library not installed. Install with pip install ollama.")
 
     st.subheader("Model Selection")
     models = get_installed_models()
@@ -409,7 +409,7 @@ if st.session_state["new_message_to_process"] and not st.session_state["llm_runn
         if not OLLAMA_AVAILABLE or not ensure_ollama_running() or is_model_selection_disabled:
             err_msg = (
                 "⚠ Local LLM (Ollama) not available or server is down. "
-                "Action: Please ensure you have Ollama installed, run `ollama serve` in your terminal, and pull the desired model."
+                "Action: Please ensure you have Ollama installed, run ollama serve in your terminal, and pull the desired model."
             )
             placeholder.markdown(err_msg)
             chat["messages"].append({"role": "assistant", "content": err_msg})
@@ -435,7 +435,7 @@ if st.session_state["new_message_to_process"] and not st.session_state["llm_runn
                 save_chats(chats)
 
             except Exception as e:
-                err_msg = f"❌ Error during LLM generation: {type(e).__name__}: {e}. Ensure model **{model}** is pulled."
+                err_msg = f"❌ Error during LLM generation: {type(e)._name_}: {e}. Ensure model *{model}* is pulled."
                 placeholder.markdown(err_msg)
                 chat["messages"].append({"role": "assistant", "content": err_msg})
                 save_chats(chats)
