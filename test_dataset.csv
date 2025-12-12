@@ -1,0 +1,6 @@
+prompt,expected_output
+Write a Python function to calculate factorial.,def factorial(n): return 1 if n==0 else n*factorial(n-1)
+Write a Python function to reverse a string.,def reverse_string(s): return s[::-1]
+Write a C program to swap two numbers.,int a,b,temp; temp=a; a=b; b=temp;
+Write a C program to check if a number is even or odd.,if(num%2==0){printf("even");}else{printf("odd");}
+Write a Java program to print "Hello World".,System.out.println("Hello World");
