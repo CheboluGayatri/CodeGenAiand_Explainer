@@ -76,7 +76,7 @@ Works offline once models are installed.
 
 # Installation
 Clone the Repository
-git clone https://github.com/yourusername/codegen-ai.git
+git clone https://github.com/CheboluGayatri/CodeGenAiand_Explainer.git
 cd codegen-ai
 
 Install Python Dependencies
