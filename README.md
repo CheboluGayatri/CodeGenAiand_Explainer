@@ -117,12 +117,19 @@ View AI-generated explanations and fixes
 
 # Supported File Types
 File Type	Extraction Method
+
 Images	OCR via pytesseract
+
 PDF	pdfplumber
+
 DOCX	python-docx
+
 TXT / CSV	pandas / native read
 # Project Structure
 app.py            # Main Streamlit application
+
 uploads/          # Uploaded files storage
+
 chats.json        # Chat session history
+
 requirements.txt  # Project dependencies
