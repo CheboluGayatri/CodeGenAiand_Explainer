@@ -1,113 +1,128 @@
-# CodeGenAiand_Explainer
-CodeGenesis is a local AI-powered assistant for generating, explaining, and correcting code. It seamlessly integrates Streamlit, Ollama, and OCR technologies to let you interact with code through text or uploaded files/images.
+# CodeGenAI and Explainer
+Infosys AI Internship 6.0 – CodeGenie Project
 
-Features
+# Overview
 
-💬 Interactive Chat: Ask questions, get code explanations, or request fixes.
+CodeGenAI and Explainer is a local AI-powered assistant designed to generate, explain, review, and fix code.
+It was developed as part of the Infosys Internship 6.0 (B2) – CodeGenie: AI Explainer and Code Generator program.
 
-📎 File Upload & Analysis: Upload images, PDFs, DOCX, TXT, or CSV files. Extract code with OCR if needed.
+The application combines Streamlit, Ollama, and OCR technologies to allow users to interact with code through chat, files, and images, all while keeping processing local and private.
 
-🖼️ OCR Support: Images are preprocessed and scanned for text using pytesseract.
+# Internship Details
 
-🤖 Local LLM: Powered by Ollama for fast, private, on-device AI code analysis.
+Organization: Infosys (Springboard)
 
-🛠️ Code Review & Fixes: Automatically checks for syntax, logic, and security issues in uploaded code snippets.
+Internship: Internship 6.0 (B2) – CodeGenie
 
-How It Works
+Duration: September 1, 2025 – November 5, 2025
+
+Domain: Artificial Intelligence
+
+Status: Successfully Completed
+
+# Key Features
+
+💬 Interactive AI Chat
+Ask questions, generate code, get explanations, or request fixes in real time.
+
+📎 File Upload and Analysis
+Upload images, PDFs, DOCX, TXT, or CSV files for code extraction and analysis.
+
+🖼️ OCR Support
+Extracts code and text from images using Tesseract OCR with preprocessing for accuracy.
+
+🤖 Local LLM with Ollama
+Runs a local large language model for fast, private, on-device code understanding.
+
+🛠️ Code Review and Fixes
+Automatically checks uploaded code for syntax errors, logic issues, and potential improvements.
+
+# How It Works
 1. Streamlit Frontend
 
-Provides a user-friendly web interface.
+Provides a simple web interface.
 
-Displays chat messages, uploaded files, and LLM responses.
+Displays chat history, uploaded files, and AI responses.
 
-Handles user input and file uploads dynamically.
+Handles dynamic user input and file uploads.
 
-Renders OCR results for images before sending them to the LLM.
+Shows extracted OCR text before sending it to the LLM.
 
 2. OCR with pytesseract
 
-Images are preprocessed (grayscale, contrast, threshold, filtering) for better text recognition.
+Preprocesses images using grayscale, thresholding, and filtering.
 
-Supports formats: jpg, jpeg, png, bmp, tiff.
+Supports formats: JPG, JPEG, PNG, BMP, TIFF.
 
-Extracted code/text is displayed in the chat for verification.
+Displays extracted text for user verification.
 
 3. File Parsing
 
-PDF → pdfplumber
+PDF: pdfplumber
 
-DOCX → python-docx
+DOCX: python-docx
 
-CSV / TXT → pandas / standard read
+CSV / TXT: pandas or native file reading
 
 4. Ollama LLM
 
-Runs a local large language model (ollama) to analyze and correct code.
+Runs a local large language model.
 
-Prompts include system instructions + extracted code text.
+Analyzes, explains, and corrects code.
 
-Supports streaming responses, allowing live feedback in the chat.
+Supports streaming responses for live feedback.
 
-Handles hidden prompts for private LLM processing.
+Works offline once models are installed.
 
-Installation
-
-Clone the repository
-
+# Installation
+Clone the Repository
 git clone https://github.com/yourusername/codegen-ai.git
 cd codegen-ai
 
-
-Install dependencies
-
+Install Python Dependencies
 pip install -r requirements.txt
 
+Install Tesseract OCR (Required for Images)
 
-Install Tesseract OCR (for images)
+Windows: Download from official Tesseract site
 
-Windows: Download here
+Linux:
 
-Linux: sudo apt install tesseract-ocr
+sudo apt install tesseract-ocr
 
-MacOS: brew install tesseract
 
-Install Ollama (optional for local LLM)
+macOS:
 
-brew install ollama  # macOS
-# or follow https://ollama.com/docs for other platforms
-ollama pull gemma:2b  # Example model
+brew install tesseract
+
+Install Ollama (Optional but Recommended)
+brew install ollama
+ollama pull gemma:2b
 ollama serve
+
+
+For other platforms, refer to the Ollama documentation.
 
 Usage
 streamlit run app.py
 
 
-Open your browser at http://localhost:8501.
+Open your browser at http://localhost:8501
 
-Start a new chat or select an existing one.
+Start a new chat or continue an existing one
 
-Type a coding question or upload a code file/image.
+Ask coding questions or upload files/images
 
-View the AI-generated response and explanation.
+View AI-generated explanations and fixes
 
-Repeat as needed!
-
-Supported File Types
-Type	Extraction Method
+# Supported File Types
+File Type	Extraction Method
 Images	OCR via pytesseract
 PDF	pdfplumber
 DOCX	python-docx
-TXT / CSV	Pandas / native read
-Project Structure
-app.py                 # Main Streamlit app
-uploads/               # Uploaded files stored here
-chats.json             # Session storage for chat history
-requirements.txt       # Python dependencies
-
-Notes
-
-The system automatically titles new chats based on the uploaded file or user input.
-
-LLM fallback is available if Ollama is not installed or running.
-
-Large files are truncated to prevent memory issues (up to 12,000 characters for LLM).
+TXT / CSV	pandas / native read
+# Project Structure
+app.py            # Main Streamlit application
+uploads/          # Uploaded files storage
+chats.json        # Chat session history
+requirements.txt  # Project dependencies
