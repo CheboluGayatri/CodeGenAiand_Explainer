@@ -1,135 +1,247 @@
-# CodeGenAI and Explainer
-Infosys AI Internship 6.0 – CodeGenie Project
+# 🚀 CodeGenAI & Explainer
 
-# Overview
+**An AI-powered Code Generation, Explanation & Review Assistant built with Streamlit, Ollama, and OCR.**
 
-CodeGenAI and Explainer is a local AI-powered assistant designed to generate, explain, review, and fix code.
-It was developed as part of the Infosys Internship 6.0 (B2) – CodeGenie: AI Explainer and Code Generator program.
+🔗 **Live Demo:** https://codegenaiand-explainer.onrender.com
 
-The application combines Streamlit, Ollama, and OCR technologies to allow users to interact with code through chat, files, and images, all while keeping processing local and private.
+🔗 **GitHub Repository:** https://github.com/CheboluGayatri/CodeGenAiand_Explainer
 
-# Internship Details
+---
 
-Organization: Infosys (Springboard)
+## 📌 Overview
 
-Internship: Internship 6.0 (B2) – CodeGenie
+**CodeGenAI & Explainer** is an AI-powered coding assistant that helps developers generate, explain, debug, review, and improve source code through a simple web interface.
 
-Duration: September 1, 2025 – November 5, 2025
+The application supports text prompts, document uploads, and image-based code extraction using OCR, making it easy to analyze code from multiple sources. It combines modern AI technologies with an intuitive Streamlit interface to provide a productive coding experience.
 
-Domain: Artificial Intelligence
+This project was developed as part of the **Infosys Springboard Internship 6.0 – CodeGenie: AI Explainer & Code Generator**.
 
-Status: Successfully Completed
+---
 
-# Key Features
+# ✨ Features
 
-💬 Interactive AI Chat
-Ask questions, generate code, get explanations, or request fixes in real time.
+### 💬 AI Code Assistant
 
-📎 File Upload and Analysis
-Upload images, PDFs, DOCX, TXT, or CSV files for code extraction and analysis.
+* Generate code from natural language prompts
+* Explain complex code line by line
+* Fix syntax and logical errors
+* Optimize existing code
+* Review code quality
 
-🖼️ OCR Support
-Extracts code and text from images using Tesseract OCR with preprocessing for accuracy.
+### 📄 Document Analysis
 
-🤖 Local LLM with Ollama
-Runs a local large language model for fast, private, on-device code understanding.
+Upload and analyze:
 
-🛠️ Code Review and Fixes
-Automatically checks uploaded code for syntax errors, logic issues, and potential improvements.
+* PDF
+* DOCX
+* TXT
+* CSV
 
-# How It Works
-1. Streamlit Frontend
+The application extracts the content and provides AI-powered explanations and improvements.
 
-Provides a simple web interface.
+### 🖼 OCR-Based Code Extraction
 
-Displays chat history, uploaded files, and AI responses.
+Extract code directly from images using **Tesseract OCR**.
 
-Handles dynamic user input and file uploads.
+Supported image formats:
 
-Shows extracted OCR text before sending it to the LLM.
+* JPG
+* JPEG
+* PNG
+* BMP
+* TIFF
 
-2. OCR with pytesseract
+Image preprocessing improves OCR accuracy before sending content to the AI model.
 
-Preprocesses images using grayscale, thresholding, and filtering.
+### 🤖 Local AI using Ollama
 
-Supports formats: JPG, JPEG, PNG, BMP, TIFF.
+Supports local Large Language Models through Ollama, enabling:
 
-Displays extracted text for user verification.
+* Offline AI inference
+* Faster responses
+* Better privacy
+* Local processing without sending code to external services
 
-3. File Parsing
+### 📚 Chat History
 
-PDF: pdfplumber
+* Interactive conversations
+* Persistent chat sessions
+* Easy review of previous AI responses
 
-DOCX: python-docx
+---
 
-CSV / TXT: pandas or native file reading
+# 🛠 Tech Stack
 
-4. Ollama LLM
+| Category         | Technologies  |
+| ---------------- | ------------- |
+| Frontend         | Streamlit     |
+| AI Model         | Ollama        |
+| OCR              | Tesseract OCR |
+| Image Processing | Pillow        |
+| PDF Processing   | pdfplumber    |
+| DOCX Processing  | python-docx   |
+| Data Handling    | Pandas        |
+| Language         | Python        |
 
-Runs a local large language model.
+---
 
-Analyzes, explains, and corrects code.
+# 📂 Project Structure
 
-Supports streaming responses for live feedback.
+```text
+CodeGenAiand_Explainer/
+│
+├── app.py
+├── requirements.txt
+├── uploads/
+├── chats.json
+├── README.md
+└── assets/
+```
 
-Works offline once models are installed.
+---
 
-# Installation
-Clone the Repository
+# ⚙ Installation
+
+## Clone the Repository
+
+```bash
 git clone https://github.com/CheboluGayatri/CodeGenAiand_Explainer.git
-cd codegen-ai
+cd CodeGenAiand_Explainer
+```
 
-Install Python Dependencies
+## Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-Install Tesseract OCR (Required for Images)
+---
 
-Windows: Download from official Tesseract site
+# Install Tesseract OCR
 
-Linux:
+### Windows
 
+Download and install:
+
+https://github.com/UB-Mannheim/tesseract/wiki
+
+### Ubuntu / Linux
+
+```bash
+sudo apt update
 sudo apt install tesseract-ocr
+```
 
+### macOS
 
-macOS:
-
+```bash
 brew install tesseract
+```
 
-Install Ollama (Optional but Recommended)
-brew install ollama
+---
+
+# Install Ollama
+
+Download from:
+
+https://ollama.com
+
+Pull a model:
+
+```bash
 ollama pull gemma:2b
+```
+
+Start Ollama:
+
+```bash
 ollama serve
+```
 
+---
 
-For other platforms, refer to the Ollama documentation.
+# ▶ Running the Application
 
-Usage
+```bash
 streamlit run app.py
+```
 
+Open your browser:
 
-Open your browser at http://localhost:8501
+```
+http://localhost:8501
+```
 
-Start a new chat or continue an existing one
+---
 
-Ask coding questions or upload files/images
+# 🌐 Live Demo
 
-View AI-generated explanations and fixes
+👉 https://codegenaiand-explainer.onrender.com
 
-# Supported File Types
-File Type	Extraction Method
+---
 
-Images	OCR via pytesseract
+# 📄 Supported File Types
 
-PDF	pdfplumber
+| File Type        | Processing Method |
+| ---------------- | ----------------- |
+| PNG / JPG / JPEG | OCR               |
+| BMP / TIFF       | OCR               |
+| PDF              | pdfplumber        |
+| DOCX             | python-docx       |
+| TXT              | Native Reader     |
+| CSV              | Pandas            |
 
-DOCX	python-docx
+---
 
-TXT / CSV	pandas / native read
-# Project Structure
-app.py            # Main Streamlit application
+# 💡 Use Cases
 
-uploads/          # Uploaded files storage
+* AI Code Generation
+* Code Explanation
+* Debugging
+* Code Review
+* OCR-based Code Extraction
+* Programming Education
+* Developer Productivity
 
-chats.json        # Chat session history
+---
 
-requirements.txt  # Project dependencies
+# 📈 Future Enhancements
+
+* Support multiple LLMs
+* Voice input
+* Multi-language code generation
+* Code execution sandbox
+* Export AI responses
+* Authentication system
+* Cloud model integration
+
+---
+
+# 👩‍💻 Internship Information
+
+**Organization:** Infosys Springboard
+
+**Program:** Internship 6.0 (B2)
+
+**Project:** CodeGenie – AI Explainer & Code Generator
+
+**Domain:** Artificial Intelligence
+
+**Duration:** September 2025 – November 2025
+
+---
+
+# 👩‍💻 Developer
+
+**Gayatri Chebolu**
+
+AI • Machine Learning • Generative AI Enthusiast
+
+GitHub:
+https://github.com/CheboluGayatri
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub. Your support helps improve the project and motivates future development.
