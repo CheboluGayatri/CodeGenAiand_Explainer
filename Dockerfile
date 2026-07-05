@@ -2,7 +2,6 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy application files
 COPY . /app
 
 # Install system dependencies
@@ -19,15 +18,13 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Start Ollama temporarily, download the model, then stop the server
+# Download model
 RUN ollama serve & \
     OLLAMA_PID=$! && \
     sleep 10 && \
     ollama pull llama3.2 && \
     kill $OLLAMA_PID
 
-# Streamlit port
 EXPOSE 8501
 
-# Start Ollama and Streamlit
-CMD sh -c "ollama serve & sleep 5 && streamlit run app.py --server.port=${PORT:-8501} --server.address=0.0.0.0"
+CMD sh -c "ollama serve & sleep 5 && streamlit run chatapp.py --server.port=${PORT:-8501} --server.address=0.0.0.0"
