@@ -1,115 +1,142 @@
 # 🚀 CodeGenAI & Explainer
 
-**An AI-powered Code Generation, Explanation & Review Assistant built with Streamlit, Ollama, and OCR.**
+An AI-powered coding assistant that helps developers **generate, explain, debug, optimize, and review code** using Large Language Models (LLMs). The application also supports **document analysis** and **OCR-based code extraction**, allowing users to analyze code from text files, documents, and images through an intuitive Streamlit interface.
 
-🔗 **Live Demo:** https://codegenaiand-explainer.onrender.com
-
-🔗 **GitHub Repository:** https://github.com/CheboluGayatri/CodeGenAiand_Explainer
+> Developed as part of the **Infosys Springboard Internship 6.0 – CodeGenie: AI Explainer & Code Generator**
 
 ---
 
-## 📌 Overview
+## 🌐 Live Demo
 
-**CodeGenAI & Explainer** is an AI-powered coding assistant that helps developers generate, explain, debug, review, and improve source code through a simple web interface.
+**Application:** https://codegenaiand-explainer.onrender.com
 
-The application supports text prompts, document uploads, and image-based code extraction using OCR, making it easy to analyze code from multiple sources. It combines modern AI technologies with an intuitive Streamlit interface to provide a productive coding experience.
+**GitHub Repository:** https://github.com/CheboluGayatri/CodeGenAiand_Explainer
 
-This project was developed as part of the **Infosys Springboard Internship 6.0 – CodeGenie: AI Explainer & Code Generator**.
+---
+
+# 📖 Overview
+
+CodeGenAI & Explainer is designed to simplify software development by combining AI-powered code assistance with document and image processing.
+
+Users can:
+
+- Generate code from natural language prompts
+- Understand existing code with detailed explanations
+- Detect and fix programming errors
+- Improve code quality and performance
+- Extract code from images using OCR
+- Analyze documents containing source code
+- Maintain interactive chat history
+
+The application runs locally with **Ollama**, enabling faster inference, improved privacy, and offline AI capabilities.
 
 ---
 
 # ✨ Features
 
-### 💬 AI Code Assistant
+## 🤖 AI Code Assistant
 
-* Generate code from natural language prompts
-* Explain complex code line by line
-* Fix syntax and logical errors
-* Optimize existing code
-* Review code quality
+- Generate code from natural language descriptions
+- Explain code step by step
+- Debug syntax and logical errors
+- Optimize existing code
+- Review code quality and suggest improvements
 
-### 📄 Document Analysis
+---
 
-Upload and analyze:
+## 📄 Document Analysis
 
-* PDF
-* DOCX
-* TXT
-* CSV
+Upload programming-related documents for AI analysis.
 
-The application extracts the content and provides AI-powered explanations and improvements.
+Supported formats:
 
-### 🖼 OCR-Based Code Extraction
+- PDF
+- DOCX
+- TXT
+- CSV
 
-Extract code directly from images using **Tesseract OCR**.
+The application extracts the document content and provides explanations, improvements, and code insights.
+
+---
+
+## 🖼 OCR-Based Code Extraction
+
+Extract source code directly from images using **Tesseract OCR**.
 
 Supported image formats:
 
-* JPG
-* JPEG
-* PNG
-* BMP
-* TIFF
+- PNG
+- JPG
+- JPEG
+- BMP
+- TIFF
 
-Image preprocessing improves OCR accuracy before sending content to the AI model.
-
-### 🤖 Local AI using Ollama
-
-Supports local Large Language Models through Ollama, enabling:
-
-* Offline AI inference
-* Faster responses
-* Better privacy
-* Local processing without sending code to external services
-
-### 📚 Chat History
-
-* Interactive conversations
-* Persistent chat sessions
-* Easy review of previous AI responses
+Image preprocessing is applied to improve OCR accuracy before analysis.
 
 ---
 
-# 🛠 Tech Stack
+## 💬 Chat History
 
-| Category         | Technologies  |
-| ---------------- | ------------- |
-| Frontend         | Streamlit     |
-| AI Model         | Ollama        |
-| OCR              | Tesseract OCR |
-| Image Processing | Pillow        |
-| PDF Processing   | pdfplumber    |
-| DOCX Processing  | python-docx   |
-| Data Handling    | Pandas        |
-| Language         | Python        |
+- Interactive AI conversations
+- Persistent chat sessions
+- Easy access to previous responses
 
 ---
 
-# 📂 Project Structure
+## 🔒 Local AI with Ollama
+
+Run Large Language Models locally for:
+
+- Offline inference
+- Faster response times
+- Enhanced privacy
+- No dependency on external AI APIs
+
+---
+
+# 🛠 Technology Stack
+
+| Category | Technology |
+|----------|------------|
+| Frontend | Streamlit |
+| Programming Language | Python |
+| AI Model | Ollama |
+| OCR Engine | Tesseract OCR |
+| Image Processing | Pillow |
+| PDF Processing | pdfplumber |
+| DOCX Processing | python-docx |
+| Data Handling | Pandas |
+
+---
+
+# 📁 Project Structure
 
 ```text
 CodeGenAiand_Explainer/
 │
 ├── app.py
 ├── requirements.txt
-├── uploads/
 ├── chats.json
-├── README.md
-└── assets/
+├── uploads/
+├── assets/
+└── README.md
 ```
 
 ---
 
 # ⚙ Installation
 
-## Clone the Repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/CheboluGayatri/CodeGenAiand_Explainer.git
+
 cd CodeGenAiand_Explainer
 ```
 
-## Install Dependencies
+---
+
+## 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -117,7 +144,7 @@ pip install -r requirements.txt
 
 ---
 
-# Install Tesseract OCR
+## 3. Install Tesseract OCR
 
 ### Windows
 
@@ -140,19 +167,19 @@ brew install tesseract
 
 ---
 
-# Install Ollama
+## 4. Install Ollama
 
-Download from:
+Download Ollama:
 
 https://ollama.com
 
-Pull a model:
+Pull the required model:
 
 ```bash
 ollama pull gemma:2b
 ```
 
-Start Ollama:
+Start the Ollama server:
 
 ```bash
 ollama serve
@@ -162,11 +189,13 @@ ollama serve
 
 # ▶ Running the Application
 
+Launch the Streamlit application:
+
 ```bash
 streamlit run app.py
 ```
 
-Open your browser:
+Open your browser and visit:
 
 ```
 http://localhost:8501
@@ -174,50 +203,48 @@ http://localhost:8501
 
 ---
 
-# 🌐 Live Demo
+# 📂 Supported File Types
 
-👉 https://codegenaiand-explainer.onrender.com
-
----
-
-# 📄 Supported File Types
-
-| File Type        | Processing Method |
-| ---------------- | ----------------- |
-| PNG / JPG / JPEG | OCR               |
-| BMP / TIFF       | OCR               |
-| PDF              | pdfplumber        |
-| DOCX             | python-docx       |
-| TXT              | Native Reader     |
-| CSV              | Pandas            |
+| File Type | Processing Method |
+|-----------|-------------------|
+| PNG | OCR |
+| JPG | OCR |
+| JPEG | OCR |
+| BMP | OCR |
+| TIFF | OCR |
+| PDF | pdfplumber |
+| DOCX | python-docx |
+| TXT | Native Reader |
+| CSV | Pandas |
 
 ---
 
 # 💡 Use Cases
 
-* AI Code Generation
-* Code Explanation
-* Debugging
-* Code Review
-* OCR-based Code Extraction
-* Programming Education
-* Developer Productivity
+- AI-assisted code generation
+- Code explanation and learning
+- Bug detection and debugging
+- Code review
+- Code optimization
+- OCR-based code extraction
+- Programming education
+- Developer productivity
 
 ---
 
-# 📈 Future Enhancements
+# 🚀 Future Enhancements
 
-* Support multiple LLMs
-* Voice input
-* Multi-language code generation
-* Code execution sandbox
-* Export AI responses
-* Authentication system
-* Cloud model integration
+- Support multiple LLMs
+- Voice-based prompts
+- Multi-language code generation
+- Secure code execution sandbox
+- Export AI responses
+- User authentication
+- Cloud AI model integration
 
 ---
 
-# 👩‍💻 Internship Information
+# 👩‍💻 Internship Details
 
 **Organization:** Infosys Springboard
 
@@ -237,11 +264,10 @@ http://localhost:8501
 
 AI • Machine Learning • Generative AI Enthusiast
 
-GitHub:
-https://github.com/CheboluGayatri
+GitHub: https://github.com/CheboluGayatri
 
 ---
 
 # ⭐ Support
 
-If you found this project useful, consider giving it a ⭐ on GitHub. Your support helps improve the project and motivates future development.
+If you found this project helpful, consider giving the repository a **⭐ Star** on GitHub. Your support encourages continued development and future improvements.
